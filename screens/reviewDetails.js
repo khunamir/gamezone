@@ -7,5 +7,5 @@ export default function ReviewDetails() {
         <View style={ globalStyles.container }>
             <Text>Review Screen</Text>
         </View>
-    )
+    );
 }

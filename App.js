@@ -7,7 +7,7 @@ import { AppNavigator } from './routes/HomeStack';
 const getFonts = () => Font.loadAsync({
   'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
   'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-})
+});
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -23,7 +23,7 @@ export default function App() {
         onFinish={() => setFontsLoaded(true)}
         onError={console.warn}
       />
-    )
+    );
   }
   
 }
