@@ -2,15 +2,12 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
-import { MaterialIcons } from "@expo/vector-icons";
+import { ImageBackground } from "react-native";
+import Header from "../shared/header";
 
 const Stack = createStackNavigator();
 
 const HomeNavigator = ({ navigation }) => {
-
-  const openMenu = () => {
-    navigation.openDrawer();
-  }
 
   return (
     <Stack.Navigator 
@@ -28,13 +25,12 @@ const HomeNavigator = ({ navigation }) => {
         name="Home" 
         component={ Home }
         options={{
-            title: "Home",
-            headerLeft: () => (
-                <MaterialIcons name="menu" size={28} color='black' onPress={openMenu} />
+            headerTitle: () => (
+              <Header navigation={ navigation } title="GameZone" />
             ),
-            headerLeftContainerStyle: {
-                paddingHorizontal: 20
-            }
+            headerBackground: () => (
+              <ImageBackground source={ require('../assets/game_bg.png') } style={{ height: '100%' }} />
+            )
         }}
       />
       <Stack.Screen 
