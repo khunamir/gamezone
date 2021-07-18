@@ -1,8 +1,9 @@
 import React, { useState} from 'react';
-import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { globalStyles } from '../styles/global';
 import Card from '../shared/card';
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewForm from './reviewForm';
 
 export default function Home({ navigation }) {
 
@@ -14,19 +15,32 @@ export default function Home({ navigation }) {
         { title: 'Hunter x Hunter', rating: 3, body: 'lorem ipsum', key: '3' },
     ]);
 
+    const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((currentReviews) => {
+            return [
+                review,
+                ...currentReviews
+            ]
+        });
+        setModalOpen(false);
+    }
+
     return (
         <View style={ globalStyles.container }>
 
             <Modal visible={ modalOpen } animationType="slide">
-                <View style={ styles.modalContent }>
-                    <MaterialIcons 
-                        name="close"
-                        size={ 24 }
-                        styles={{ ...styles.modalToggle, ...styles.modalClose }}
-                        onPress={ () => { setModalOpen(false) }}
-                    />
-                    <Text>Hello from the Modal!</Text>
-                </View>
+                <TouchableWithoutFeedback onPress={ Keyboard.dismiss }>
+                    <View style={ styles.modalContent }>
+                        <MaterialIcons 
+                            name="close"
+                            size={ 24 }
+                            styles={{ ...styles.modalToggle, ...styles.modalClose }}
+                            onPress={ () => { setModalOpen(false) }}
+                        />
+                        <ReviewForm addReview={ addReview } />
+                    </View>
+                </TouchableWithoutFeedback>
             </Modal>
 
             <MaterialIcons 
@@ -35,8 +49,7 @@ export default function Home({ navigation }) {
                 style={ styles.modalToggle }
                 onPress={ () => { setModalOpen(true) }}
             />
-
-            <Text style={ globalStyles.titleText }>Home Screen</Text>
+            
             <FlatList 
                 data={ reviews }
                 renderItem={ ({ item }) => (
