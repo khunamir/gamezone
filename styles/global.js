@@ -7,6 +7,13 @@ export const globalStyles = StyleSheet.create({
     titleText: {
         fontFamily: 'nunito-bold',
         fontSize: 18
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ddd',
+        padding: 10,
+        fontSize: 18,
+        borderRadius: 6
     }
 });
 
