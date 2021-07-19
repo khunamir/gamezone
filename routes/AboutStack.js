@@ -20,18 +20,18 @@ const AboutNavigator = ({ navigation }) => {
                 headerTintColor: "#444"
             }}
         >
-        <Stack.Screen 
-            name="About" 
-            component={About}
-            options={{
-                headerTitle: () => (
-                  <Header navigation={ navigation } title="About GameZone" />
-                ),
-                headerBackground: () => (
-                  <ImageBackground source={ require('../assets/game_bg.png') } style={{ height: '100%' }} />
-                )
-            }}
-        />
+            <Stack.Screen 
+                name="About" 
+                component={About}
+                options={{
+                    headerTitle: () => (
+                    <Header navigation={ navigation } title="About GameZone" />
+                    ),
+                    headerBackground: () => (
+                    <ImageBackground source={ require('../assets/game_bg.png') } style={{ height: '100%' }} />
+                    )
+                }}
+            />
         </Stack.Navigator>
     );
 }

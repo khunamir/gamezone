@@ -35,7 +35,7 @@ const HomeNavigator = ({ navigation }) => {
       />
       <Stack.Screen 
         name="ReviewDetails"
-        component={ReviewDetails}
+        component={ ReviewDetails }
         options={{
             title: "Review Details"
         }}

@@ -17,12 +17,14 @@ export default function Home({ navigation }) {
 
     const addReview = (review) => {
         review.key = Math.random().toString();
+
         setReviews((currentReviews) => {
             return [
                 review,
                 ...currentReviews
             ]
         });
+
         setModalOpen(false);
     }
 
@@ -60,6 +62,7 @@ export default function Home({ navigation }) {
                     </TouchableOpacity>
                 )}
             />
+            
         </View>
     );
 }
@@ -82,4 +85,4 @@ const styles = StyleSheet.create({
     modalContent: {
       flex: 1
     }
-  });
+});

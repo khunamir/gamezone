@@ -30,6 +30,6 @@ export const images = {
         '2': require('../assets/rating-2.png'),
         '3': require('../assets/rating-3.png'),
         '4': require('../assets/rating-4.png'),
-        '5': require('../assets/rating-5.png'),
+        '5': require('../assets/rating-5.png')
     }
 }

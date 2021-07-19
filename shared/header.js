@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
         color: '#333',
         letterSpacing: 1
     },
+    headerTitle: {
+        flexDirection: 'row'
+    },
+    headerImage: {
+        width: 26,
+        height: 26,
+        marginHorizontal: 10
+    },
     icon: {
         position: "absolute",
         left: 16
-    },
-    headerTitle: {
-      flexDirection: 'row'
-    },
-    headerImage: {
-      width: 26,
-      height: 26,
-      marginHorizontal: 10
-    }
+    }    
 })
